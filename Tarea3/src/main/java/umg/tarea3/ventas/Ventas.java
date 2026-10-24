@@ -39,18 +39,18 @@ public class Ventas extends javax.swing.JFrame {
         btnGenerarReporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Control de Ventas Semanales");
+        setTitle("control de ventas semanales");
 
-        jLabel1.setText("Monto de la venta:");
+        jLabel1.setText("monto de la venta:");
 
-        btnAgregarVenta.setText("Agregar Venta");
+        btnAgregarVenta.setText("agregar venta");
         btnAgregarVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarVentaActionPerformed(evt);
             }
         });
 
-        btnGenerarReporte.setText("Generar Reporte");
+        btnGenerarReporte.setText("generar reporte");
         btnGenerarReporte.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGenerarReporteActionPerformed(evt);
@@ -109,11 +109,11 @@ public class Ventas extends javax.swing.JFrame {
             }
         }
         try (FileWriter fw = new FileWriter("temp/ricardogonzalez_reporte_ventas.txt")) {
-            fw.write("Reporte de Ventas\n");
-            fw.write("Total Vendido: " + String.format("%.2f", total) + "\n");
-            fw.write("Ventas superiores a Q500: " + mayores + "\n");
+            fw.write("reporte de ventas\n");
+            fw.write("total vendido: " + String.format("%.2f", total) + "\n");
+            fw.write("ventas superiores a q500: " + mayores + "\n");
         } catch (IOException ex) {
-            System.out.println("No se pudo escribir el archivo");
+            System.out.println("no se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 

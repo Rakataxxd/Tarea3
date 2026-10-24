@@ -41,18 +41,18 @@ public class Asistencia extends javax.swing.JFrame {
         taLista = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registro de Asistencia a Conferencia");
+        setTitle("registro de asistencia a conferencia");
 
-        jLabel1.setText("Nombre del asistente:");
+        jLabel1.setText("nombre del asistente:");
 
-        btnRegistrar.setText("Registrar Asistente");
+        btnRegistrar.setText("registrar asistente");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
 
-        btnExportar.setText("Exportar Lista");
+        btnExportar.setText("exportar lista");
         btnExportar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnExportarActionPerformed(evt);
@@ -112,12 +112,12 @@ public class Asistencia extends javax.swing.JFrame {
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
         try (FileWriter fw = new FileWriter("temp/ricardogonzalez_asistencia.txt")) {
-            fw.write("Lista de Asistencia\n");
+            fw.write("lista de asistencia\n");
             for (int i = 0; i < asistentes.length; i++) {
                 fw.write((i + 1) + ". " + asistentes[i] + "\n");
             }
         } catch (IOException ex) {
-            System.out.println("No se pudo escribir el archivo");
+            System.out.println("no se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnExportarActionPerformed
 

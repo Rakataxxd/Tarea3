@@ -1,4 +1,4 @@
-# Tarea 3
+# tarea 3
 
-Proyecto de NetBeans (Maven) con los 6 ejercicios, en la carpeta `Tarea3`.
-Los archivos se leen y escriben en `Tarea3/temp`.
+proyecto de netbeans con los 6 ejercicios, en la carpeta `Tarea3`.
+los archivos se leen y escriben en `Tarea3/temp`.

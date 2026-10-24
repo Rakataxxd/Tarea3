@@ -46,36 +46,36 @@ public class Videojuegos extends javax.swing.JFrame {
         taCatalogo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Catálogo de Videojuegos");
+        setTitle("catalogo de videojuegos");
 
-        jLabel1.setText("Título del Juego:");
+        jLabel1.setText("titulo del juego:");
 
-        jLabel2.setText("Consola:");
+        jLabel2.setText("consola:");
 
-        jLabel3.setText("Año de Lanzamiento:");
+        jLabel3.setText("anio de lanzamiento:");
 
-        btnAgregar.setText("Agregar Juego");
+        btnAgregar.setText("agregar juego");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);
             }
         });
 
-        btnMostrar.setText("Mostrar Catálogo");
+        btnMostrar.setText("mostrar catalogo");
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
             }
         });
 
-        btnEliminar.setText("Eliminar Último");
+        btnEliminar.setText("eliminar ultimo");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Inventario Actual:");
+        jLabel4.setText("inventario actual:");
 
         taCatalogo.setEditable(false);
         taCatalogo.setColumns(20);
@@ -158,13 +158,13 @@ public class Videojuegos extends javax.swing.JFrame {
             Videojuego juego = catalogo.get(i);
             taCatalogo.append(juego.titulo + " | " + juego.consola + " | " + juego.anioLanzamiento + "\n");
         }
-        taCatalogo.append("Total de juegos: " + catalogo.size() + "\n");
+        taCatalogo.append("total de juegos: " + catalogo.size() + "\n");
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (catalogo.size() > 0) {
             catalogo.remove(catalogo.size() - 1);
-            JOptionPane.showMessageDialog(this, "Ultimo juego eliminado");
+            JOptionPane.showMessageDialog(this, "ultimo juego eliminado");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 

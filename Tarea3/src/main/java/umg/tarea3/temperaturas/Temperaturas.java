@@ -42,16 +42,16 @@ public class Temperaturas extends javax.swing.JFrame {
         taResultados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Lector y Analizador de Temperaturas");
+        setTitle("lector y analizador de temperaturas");
 
-        btnCargarDatos.setText("Cargar Datos");
+        btnCargarDatos.setText("cargar datos");
         btnCargarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCargarDatosActionPerformed(evt);
             }
         });
 
-        btnCalcular.setText("Calcular Estadísticas");
+        btnCalcular.setText("calcular estadisticas");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -101,9 +101,9 @@ public class Temperaturas extends javax.swing.JFrame {
                 indice++;
             }
             sc.close();
-            JOptionPane.showMessageDialog(this, "Datos cargados en memoria");
+            JOptionPane.showMessageDialog(this, "datos cargados en memoria");
         } catch (FileNotFoundException ex) {
-            System.out.println("Ocurrio un error al leer");
+            System.out.println("ocurrio un error al leer");
         }
     }//GEN-LAST:event_btnCargarDatosActionPerformed
 
@@ -121,11 +121,11 @@ public class Temperaturas extends javax.swing.JFrame {
         }
         double promedio = suma / temperaturas.length;
         taResultados.setText("");
-        taResultados.append("Análisis Climático\n");
+        taResultados.append("analisis climatico\n");
         taResultados.append("------------------\n");
-        taResultados.append("Promedio de Temperatura: " + promedio + "\n");
-        taResultados.append("Días Cálidos (>= 25°): " + calidos + "\n");
-        taResultados.append("Días Frescos (< 25°): " + frescos + "\n");
+        taResultados.append("promedio de temperatura: " + promedio + "\n");
+        taResultados.append("dias calidos (>= 25°): " + calidos + "\n");
+        taResultados.append("dias frescos (< 25°): " + frescos + "\n");
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

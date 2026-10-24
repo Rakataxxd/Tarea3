@@ -40,7 +40,7 @@ public class Discos extends javax.swing.JFrame {
             }
             sc.close();
         } catch (FileNotFoundException ex) {
-            System.out.println("Ocurrio un error al leer");
+            System.out.println("ocurrio un error al leer");
         }
     }
 
@@ -63,24 +63,24 @@ public class Discos extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Biblioteca de Discos Musicales");
+        setTitle("biblioteca de discos musicales");
 
-        jLabel1.setText("Buscar Álbum:");
+        jLabel1.setText("buscar album:");
 
-        btnBuscar.setText("Buscar");
+        btnBuscar.setText("buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBuscarActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Año actual:");
+        jLabel2.setText("anio actual:");
 
         lblAnio.setText("-");
 
-        jLabel3.setText("Nuevo Año:");
+        jLabel3.setText("nuevo anio:");
 
-        btnActualizar.setText("Actualizar Registro");
+        btnActualizar.setText("actualizar registro");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
@@ -155,7 +155,7 @@ public class Discos extends javax.swing.JFrame {
                 fw.write(titulos[i] + "," + anios[i] + "\n");
             }
         } catch (IOException ex) {
-            System.out.println("No se pudo escribir el archivo");
+            System.out.println("no se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 

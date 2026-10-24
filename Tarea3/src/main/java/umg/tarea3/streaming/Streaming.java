@@ -51,41 +51,41 @@ public class Streaming extends javax.swing.JFrame {
         taResultados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Registro de Plataforma de Streaming");
+        setTitle("registro de plataforma de streaming");
 
-        jLabel1.setText("--- Datos del Artista ---");
+        jLabel1.setText("--- datos del artista ---");
 
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("nombre:");
 
-        jLabel3.setText("País de Origen:");
+        jLabel3.setText("pais de origen:");
 
-        jLabel4.setText("Oyentes Mensuales:");
+        jLabel4.setText("oyentes mensuales:");
 
-        btnCrearArtista.setText("Crear Artista");
+        btnCrearArtista.setText("crear artista");
         btnCrearArtista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearArtistaActionPerformed(evt);
             }
         });
 
-        jLabel5.setText("--- Datos de la Canción ---");
+        jLabel5.setText("--- datos de la cancion ---");
 
-        jLabel6.setText("Título:");
+        jLabel6.setText("titulo:");
 
-        jLabel7.setText("Intérprete (Artista):");
+        jLabel7.setText("interprete (artista):");
 
-        jLabel8.setText("Duración (segundos):");
+        jLabel8.setText("duracion (segundos):");
 
-        jLabel9.setText("Género:");
+        jLabel9.setText("genero:");
 
-        btnCrearCancion.setText("Crear Canción");
+        btnCrearCancion.setText("crear cancion");
         btnCrearCancion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearCancionActionPerformed(evt);
             }
         });
 
-        jLabel10.setText("Resultados en Memoria:");
+        jLabel10.setText("resultados en memoria:");
 
         taResultados.setEditable(false);
         taResultados.setColumns(20);
@@ -194,8 +194,8 @@ public class Streaming extends javax.swing.JFrame {
         artista.paisOrigen = pais;
         artista.oyentesMensuales = oyentes;
 
-        taResultados.append("Artista: " + artista.nombre + " | Pais: " + artista.paisOrigen
-                + " | Oyentes: " + artista.oyentesMensuales + "\n");
+        taResultados.append("artista: " + artista.nombre + " | pais: " + artista.paisOrigen
+                + " | oyentes: " + artista.oyentesMensuales + "\n");
     }//GEN-LAST:event_btnCrearArtistaActionPerformed
 
     private void btnCrearCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCancionActionPerformed
@@ -210,8 +210,8 @@ public class Streaming extends javax.swing.JFrame {
         cancion.genero = genero;
         cancion.nombreArtista = nombreArtista;
 
-        taResultados.append("Cancion: " + cancion.titulo + " | Duracion: " + cancion.duracionSegundos
-                + " seg | Genero: " + cancion.genero + " | Artista: " + cancion.nombreArtista + "\n");
+        taResultados.append("cancion: " + cancion.titulo + " | duracion: " + cancion.duracionSegundos
+                + " seg | genero: " + cancion.genero + " | artista: " + cancion.nombreArtista + "\n");
     }//GEN-LAST:event_btnCrearCancionActionPerformed
 
     /**
