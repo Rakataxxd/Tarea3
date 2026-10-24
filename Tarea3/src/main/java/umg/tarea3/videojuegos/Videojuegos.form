@@ -28,18 +28,19 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="related" max="-2" attributes="0"/>
-                      <Component id="txtTitulo" min="-2" pref="160" max="-2" attributes="0"/>
+                      <Component id="txtTitulo" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="related" max="-2" attributes="0"/>
-                      <Component id="txtConsola" min="-2" pref="110" max="-2" attributes="0"/>
+                      <Component id="txtConsola" min="-2" pref="200" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel3" min="-2" pref="140" max="-2" attributes="0"/>
                       <EmptySpace type="related" max="-2" attributes="0"/>
-                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="related" max="-2" attributes="0"/>
-                      <Component id="txtAnio" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="txtAnio" min="-2" pref="200" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btnAgregar" min="-2" max="-2" attributes="0"/>
@@ -48,7 +49,8 @@
                       <EmptySpace type="related" max="-2" attributes="0"/>
                       <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="jScrollPane_taCatalogo" min="-2" pref="400" max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane_taCatalogo" min="-2" pref="420" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -66,6 +68,9 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtConsola" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="related" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtAnio" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
@@ -76,7 +81,9 @@
                   <Component id="btnEliminar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="related" max="-2" attributes="0"/>
-              <Component id="jScrollPane_taCatalogo" min="-2" pref="180" max="-2" attributes="0"/>
+              <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="related" max="-2" attributes="0"/>
+              <Component id="jScrollPane_taCatalogo" min="-2" pref="160" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -85,7 +92,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Título:"/>
+            <Property name="text" type="java.lang.String" value="Título del Juego:"/>
           </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtTitulo">
@@ -99,7 +106,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Año:"/>
+            <Property name="text" type="java.lang.String" value="Año de Lanzamiento:"/>
           </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtAnio">
@@ -127,6 +134,11 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEliminarActionPerformed"/>
           </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Inventario Actual:"/>
+          </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane_taCatalogo">
       <AuxValues>

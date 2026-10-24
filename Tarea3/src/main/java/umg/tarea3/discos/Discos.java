@@ -9,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -75,7 +74,7 @@ public class Discos extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("A\u00f1o:");
+        jLabel2.setText("A\u00f1o actual:");
 
         lblAnio.setText("-");
 
@@ -140,10 +139,8 @@ public class Discos extends javax.swing.JFrame {
         for (int i = 0; i < titulos.length; i++) {
             if (titulos[i].equalsIgnoreCase(txtBuscar.getText())) {
                 lblAnio.setText(String.valueOf(anios[i]));
-                return;
             }
         }
-        JOptionPane.showMessageDialog(this, "No se encontro el album");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
@@ -157,7 +154,6 @@ public class Discos extends javax.swing.JFrame {
             for (int i = 0; i < titulos.length; i++) {
                 fw.write(titulos[i] + "," + anios[i] + "\n");
             }
-            JOptionPane.showMessageDialog(this, "Registro actualizado");
         } catch (IOException ex) {
             System.out.println("No se pudo escribir el archivo");
         }

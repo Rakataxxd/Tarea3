@@ -6,7 +6,6 @@ package umg.tarea3.ventas;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -97,8 +96,6 @@ public class Ventas extends javax.swing.JFrame {
             ventas[indice] = Double.parseDouble(txtMonto.getText());
             indice++;
             txtMonto.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "Ya ingreso las 5 ventas");
         }
     }//GEN-LAST:event_btnAgregarVentaActionPerformed
 
@@ -113,9 +110,8 @@ public class Ventas extends javax.swing.JFrame {
         }
         try (FileWriter fw = new FileWriter("temp/ricardogonzalez_reporte_ventas.txt")) {
             fw.write("Reporte de Ventas\n");
-            fw.write("Total Vendido: " + total + "\n");
+            fw.write("Total Vendido: " + String.format("%.2f", total) + "\n");
             fw.write("Ventas superiores a Q500: " + mayores + "\n");
-            JOptionPane.showMessageDialog(this, "Archivo Creado");
         } catch (IOException ex) {
             System.out.println("No se pudo escribir el archivo");
         }

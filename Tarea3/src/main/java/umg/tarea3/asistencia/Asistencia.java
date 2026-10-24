@@ -6,7 +6,6 @@ package umg.tarea3.asistencia;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -108,8 +107,6 @@ public class Asistencia extends javax.swing.JFrame {
             taLista.append((indice + 1) + ". " + asistentes[indice] + "\n");
             indice++;
             txtNombre.setText("");
-        } else {
-            JOptionPane.showMessageDialog(this, "Ya registro a los 5 asistentes");
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -119,7 +116,6 @@ public class Asistencia extends javax.swing.JFrame {
             for (int i = 0; i < asistentes.length; i++) {
                 fw.write((i + 1) + ". " + asistentes[i] + "\n");
             }
-            JOptionPane.showMessageDialog(this, "Archivo Creado");
         } catch (IOException ex) {
             System.out.println("No se pudo escribir el archivo");
         }
