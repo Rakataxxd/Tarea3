@@ -1,4 +1,8 @@
-package com.tarea3.discos;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.discos;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -8,54 +12,37 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- * Biblioteca de Discos Musicales
+ *
+ * @author usuario
  */
-public class FrmDiscos extends javax.swing.JFrame {
+public class Discos extends javax.swing.JFrame {
 
-    // Arreglos paralelos: titulos[i] corresponde a anios[i]
     String[] titulos = new String[5];
     int[] anios = new int[5];
-    int cantidad = 0;
     String ruta = "temp/discos.csv";
 
     /**
-     * Creates new form FrmDiscos
+     * Creates new form Discos
      */
-    public FrmDiscos() {
+    public Discos() {
         initComponents();
-        cargarDiscos();
+        cargarDatos();
     }
 
-    // Lee discos.csv y llena los arreglos paralelos (se llama desde el constructor)
-    private void cargarDiscos() {
+    public void cargarDatos() {
         try {
-            File archivo = new File(ruta);
-            Scanner sc = new Scanner(archivo);
-            cantidad = 0;
-            while (sc.hasNextLine() && cantidad < titulos.length) {
-                String linea = sc.nextLine().trim();
-                if (linea.isEmpty()) {
-                    continue;
-                }
-                String[] partes = linea.split(",");
-                titulos[cantidad] = partes[0].trim();
-                anios[cantidad] = Integer.parseInt(partes[1].trim());
-                cantidad++;
+            Scanner sc = new Scanner(new File(ruta));
+            int i = 0;
+            while (sc.hasNextLine()) {
+                String[] datos = sc.nextLine().split(",");
+                titulos[i] = datos[0];
+                anios[i] = Integer.parseInt(datos[1]);
+                i++;
             }
             sc.close();
-        } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(this, "No se encontro el archivo " + ruta);
+        } catch (FileNotFoundException ex) {
+            System.out.println("Ocurrio un error al leer");
         }
-    }
-
-    // Busqueda secuencial: devuelve el indice del album o -1 si no existe
-    private int buscarIndice(String titulo) {
-        for (int i = 0; i < cantidad; i++) {
-            if (titulos[i].equalsIgnoreCase(titulo)) {
-                return i;
-            }
-        }
-        return -1;
     }
 
     /**
@@ -67,23 +54,19 @@ public class FrmDiscos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        lblBuscar = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtBuscar = new javax.swing.JTextField();
         btnBuscar = new javax.swing.JButton();
-        lblAnioTexto = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         lblAnio = new javax.swing.JLabel();
-        lblNuevoAnio = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtNuevoAnio = new javax.swing.JTextField();
         btnActualizar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteca de Discos Musicales");
 
-        lblTitulo.setText("Biblioteca de Discos Musicales");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-
-        lblBuscar.setText("Buscar \u00c1lbum:");
+        jLabel1.setText("Buscar \u00c1lbum:");
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -92,11 +75,11 @@ public class FrmDiscos extends javax.swing.JFrame {
             }
         });
 
-        lblAnioTexto.setText("A\u00f1o actual:");
+        jLabel2.setText("A\u00f1o:");
 
-        lblAnio.setText("----");
+        lblAnio.setText("-");
 
-        lblNuevoAnio.setText("Nuevo A\u00f1o:");
+        jLabel3.setText("Nuevo A\u00f1o:");
 
         btnActualizar.setText("Actualizar Registro");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
@@ -112,21 +95,20 @@ public class FrmDiscos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblBuscar)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnBuscar))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblAnioTexto)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblAnio))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNuevoAnio)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNuevoAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNuevoAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnActualizar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -135,68 +117,49 @@ public class FrmDiscos extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblBuscar)
+                    .addComponent(jLabel1)
                     .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblAnioTexto)
+                    .addComponent(jLabel2)
                     .addComponent(lblAnio))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNuevoAnio)
+                    .addComponent(jLabel3)
                     .addComponent(txtNuevoAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnActualizar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        String titulo = txtBuscar.getText().trim();
-        int pos = -1;
-        for (int i = 0; i < cantidad; i++) {
-            if (titulos[i].equalsIgnoreCase(titulo)) {
-                pos = i;
-                break;
+        for (int i = 0; i < titulos.length; i++) {
+            if (titulos[i].equalsIgnoreCase(txtBuscar.getText())) {
+                lblAnio.setText(String.valueOf(anios[i]));
+                return;
             }
         }
-        if (pos == -1) {
-            lblAnio.setText("----");
-            JOptionPane.showMessageDialog(this, "El album \"" + titulo + "\" no existe.");
-        } else {
-            lblAnio.setText(String.valueOf(anios[pos]));
-        }
+        JOptionPane.showMessageDialog(this, "No se encontro el album");
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        int pos = buscarIndice(txtBuscar.getText().trim());
-        if (pos == -1) {
-            JOptionPane.showMessageDialog(this, "Primero busque un album existente.");
-            return;
+        for (int i = 0; i < titulos.length; i++) {
+            if (titulos[i].equalsIgnoreCase(txtBuscar.getText())) {
+                anios[i] = Integer.parseInt(txtNuevoAnio.getText());
+                lblAnio.setText(String.valueOf(anios[i]));
+            }
         }
-        try {
-            anios[pos] = Integer.parseInt(txtNuevoAnio.getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese un a\u00f1o valido.");
-            return;
-        }
-        try {
-            FileWriter fw = new FileWriter(ruta, false);
-            for (int i = 0; i < cantidad; i++) {
+        try (FileWriter fw = new FileWriter(ruta, false)) {
+            for (int i = 0; i < titulos.length; i++) {
                 fw.write(titulos[i] + "," + anios[i] + "\n");
             }
-            fw.close();
-            lblAnio.setText(String.valueOf(anios[pos]));
-            txtNuevoAnio.setText("");
-            JOptionPane.showMessageDialog(this, "Registro actualizado y discos.csv sobrescrito.");
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al escribir el archivo: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Registro actualizado");
+        } catch (IOException ex) {
+            System.out.println("No se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
@@ -204,21 +167,44 @@ public class FrmDiscos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Discos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Discos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Discos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Discos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmDiscos().setVisible(true);
+                new Discos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblBuscar;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtBuscar;
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JLabel lblAnioTexto;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblAnio;
-    private javax.swing.JLabel lblNuevoAnio;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtNuevoAnio;
     private javax.swing.JButton btnActualizar;
     // End of variables declaration//GEN-END:variables

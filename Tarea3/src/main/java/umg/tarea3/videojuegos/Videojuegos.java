@@ -1,20 +1,24 @@
-package com.tarea3.videojuegos;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.videojuegos;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
- * Catálogo de Videojuegos
+ *
+ * @author usuario
  */
-public class FrmVideojuegos extends javax.swing.JFrame {
+public class Videojuegos extends javax.swing.JFrame {
 
-    // Lista dinamica global de objetos Videojuego
     ArrayList<Videojuego> catalogo = new ArrayList<>();
 
     /**
-     * Creates new form FrmVideojuegos
+     * Creates new form Videojuegos
      */
-    public FrmVideojuegos() {
+    public Videojuegos() {
         initComponents();
 
     }
@@ -28,30 +32,26 @@ public class FrmVideojuegos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        lblTituloJuego = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtTitulo = new javax.swing.JTextField();
-        lblConsola = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txtConsola = new javax.swing.JTextField();
-        lblAnio = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtAnio = new javax.swing.JTextField();
         btnAgregar = new javax.swing.JButton();
         btnMostrar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
-        jScrollPane_txtCatalogo = new javax.swing.JScrollPane();
-        txtCatalogo = new javax.swing.JTextArea();
+        jScrollPane_taCatalogo = new javax.swing.JScrollPane();
+        taCatalogo = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cat\u00e1logo de Videojuegos");
 
-        lblTitulo.setText("Cat\u00e1logo de Videojuegos");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel1.setText("T\u00edtulo:");
 
-        lblTituloJuego.setText("T\u00edtulo:");
+        jLabel2.setText("Consola:");
 
-        lblConsola.setText("Consola:");
-
-        lblAnio.setText("A\u00f1o:");
+        jLabel3.setText("A\u00f1o:");
 
         btnAgregar.setText("Agregar Juego");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,10 +74,10 @@ public class FrmVideojuegos extends javax.swing.JFrame {
             }
         });
 
-        txtCatalogo.setEditable(false);
-        txtCatalogo.setColumns(20);
-        txtCatalogo.setRows(5);
-        jScrollPane_txtCatalogo.setViewportView(txtCatalogo);
+        taCatalogo.setEditable(false);
+        taCatalogo.setColumns(20);
+        taCatalogo.setRows(5);
+        jScrollPane_taCatalogo.setViewportView(taCatalogo);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,17 +86,16 @@ public class FrmVideojuegos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTituloJuego)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblConsola)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtConsola, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAnio)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
@@ -105,23 +104,21 @@ public class FrmVideojuegos extends javax.swing.JFrame {
                         .addComponent(btnMostrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEliminar))
-                    .addComponent(jScrollPane_txtCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_taCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTituloJuego)
+                    .addComponent(jLabel1)
                     .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblConsola)
+                    .addComponent(jLabel2)
                     .addComponent(txtConsola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblAnio)
+                    .addComponent(jLabel3)
                     .addComponent(txtAnio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -129,53 +126,37 @@ public class FrmVideojuegos extends javax.swing.JFrame {
                     .addComponent(btnMostrar)
                     .addComponent(btnEliminar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_txtCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane_taCatalogo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-        String titulo = txtTitulo.getText().trim();
-        String consola = txtConsola.getText().trim();
-        int anio;
-        try {
-            anio = Integer.parseInt(txtAnio.getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "El a\u00f1o debe ser un numero entero.");
-            return;
-        }
+        String titulo = txtTitulo.getText();
+        String consola = txtConsola.getText();
+        int anio = Integer.parseInt(txtAnio.getText());
         Videojuego juego = new Videojuego(titulo, consola, anio);
         catalogo.add(juego);
-
         txtTitulo.setText("");
         txtConsola.setText("");
         txtAnio.setText("");
-        txtTitulo.requestFocus();
     }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void btnMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarActionPerformed
-        txtCatalogo.setText("");
-        txtCatalogo.append("CATALOGO DE VIDEOJUEGOS\n");
-        txtCatalogo.append("-----------------------\n");
+        taCatalogo.setText("");
         for (int i = 0; i < catalogo.size(); i++) {
             Videojuego juego = catalogo.get(i);
-            txtCatalogo.append((i + 1) + ". " + juego.titulo + " | " + juego.consola
-                    + " | " + juego.anioLanzamiento + "\n");
+            taCatalogo.append(juego.titulo + " | " + juego.consola + " | " + juego.anioLanzamiento + "\n");
         }
-        txtCatalogo.append("-----------------------\n");
-        txtCatalogo.append("Total de juegos registrados: " + catalogo.size() + "\n");
+        taCatalogo.append("Total de juegos: " + catalogo.size() + "\n");
     }//GEN-LAST:event_btnMostrarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         if (catalogo.size() > 0) {
-            Videojuego eliminado = catalogo.remove(catalogo.size() - 1);
-            JOptionPane.showMessageDialog(this, "Se elimino: " + eliminado.titulo
-                    + "\nJuegos restantes: " + catalogo.size());
-        } else {
-            JOptionPane.showMessageDialog(this, "El catalogo esta vacio.");
+            catalogo.remove(catalogo.size() - 1);
+            JOptionPane.showMessageDialog(this, "Ultimo juego eliminado");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
@@ -183,25 +164,48 @@ public class FrmVideojuegos extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Videojuegos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Videojuegos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Videojuegos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Videojuegos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmVideojuegos().setVisible(true);
+                new Videojuegos().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTituloJuego;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtTitulo;
-    private javax.swing.JLabel lblConsola;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtConsola;
-    private javax.swing.JLabel lblAnio;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtAnio;
     private javax.swing.JButton btnAgregar;
     private javax.swing.JButton btnMostrar;
     private javax.swing.JButton btnEliminar;
-    private javax.swing.JScrollPane jScrollPane_txtCatalogo;
-    private javax.swing.JTextArea txtCatalogo;
+    private javax.swing.JScrollPane jScrollPane_taCatalogo;
+    private javax.swing.JTextArea taCatalogo;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,17 +1,20 @@
-package com.tarea3.streaming;
-
-import javax.swing.JOptionPane;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.streaming;
 
 /**
- * Plataforma de Streaming
+ *
+ * @author usuario
  */
-public class FrmStreaming extends javax.swing.JFrame {
+public class Streaming extends javax.swing.JFrame {
 
 
     /**
-     * Creates new form FrmStreaming
+     * Creates new form Streaming
      */
-    public FrmStreaming() {
+    public Streaming() {
         initComponents();
 
     }
@@ -25,42 +28,33 @@ public class FrmStreaming extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        lblArtista = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
-        lblPais = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         txtPais = new javax.swing.JTextField();
-        lblOyentes = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         txtOyentes = new javax.swing.JTextField();
         btnCrearArtista = new javax.swing.JButton();
-        lblCancion = new javax.swing.JLabel();
-        lblTituloCancion = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         txtTitulo = new javax.swing.JTextField();
-        lblDuracion = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         txtDuracion = new javax.swing.JTextField();
-        lblGenero = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
         txtGenero = new javax.swing.JTextField();
-        lblNombreArtista = new javax.swing.JLabel();
-        txtNombreArtista = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        txtArtista = new javax.swing.JTextField();
         btnCrearCancion = new javax.swing.JButton();
-        jScrollPane_txtBitacora = new javax.swing.JScrollPane();
-        txtBitacora = new javax.swing.JTextArea();
+        jScrollPane_taResultados = new javax.swing.JScrollPane();
+        taResultados = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plataforma de Streaming");
 
-        lblTitulo.setText("Plataforma de Streaming");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel1.setText("Nombre:");
 
-        lblArtista.setText("Artista");
-        lblArtista.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel2.setText("Pa\u00eds:");
 
-        lblNombre.setText("Nombre:");
-
-        lblPais.setText("Pa\u00eds de origen:");
-
-        lblOyentes.setText("Oyentes mensuales:");
+        jLabel3.setText("Oyentes mensuales:");
 
         btnCrearArtista.setText("Crear Artista");
         btnCrearArtista.addActionListener(new java.awt.event.ActionListener() {
@@ -69,16 +63,13 @@ public class FrmStreaming extends javax.swing.JFrame {
             }
         });
 
-        lblCancion.setText("Canci\u00f3n");
-        lblCancion.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        jLabel4.setText("T\u00edtulo:");
 
-        lblTituloCancion.setText("T\u00edtulo:");
+        jLabel5.setText("Duraci\u00f3n (seg):");
 
-        lblDuracion.setText("Duraci\u00f3n (seg):");
+        jLabel6.setText("G\u00e9nero:");
 
-        lblGenero.setText("G\u00e9nero:");
-
-        lblNombreArtista.setText("Artista:");
+        jLabel7.setText("Artista:");
 
         btnCrearCancion.setText("Crear Canci\u00f3n");
         btnCrearCancion.addActionListener(new java.awt.event.ActionListener() {
@@ -87,10 +78,10 @@ public class FrmStreaming extends javax.swing.JFrame {
             }
         });
 
-        txtBitacora.setEditable(false);
-        txtBitacora.setColumns(20);
-        txtBitacora.setRows(5);
-        jScrollPane_txtBitacora.setViewportView(txtBitacora);
+        taResultados.setEditable(false);
+        taResultados.setColumns(20);
+        taResultados.setRows(5);
+        jScrollPane_taResultados.setViewportView(taResultados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,125 +90,95 @@ public class FrmStreaming extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
-                    .addComponent(lblArtista)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNombre)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblPais)
+                        .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblOyentes)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtOyentes, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCrearArtista))
-                    .addComponent(lblCancion)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblTituloCancion)
+                        .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblDuracion)
+                        .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblGenero)
+                        .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblNombreArtista)
+                        .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnCrearCancion)
-                    .addComponent(jScrollPane_txtBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_taResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblArtista)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
+                    .addComponent(jLabel1)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPais)
+                    .addComponent(jLabel2)
                     .addComponent(txtPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblOyentes)
+                    .addComponent(jLabel3)
                     .addComponent(txtOyentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCrearArtista))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblCancion)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTituloCancion)
+                    .addComponent(jLabel4)
                     .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblDuracion)
+                    .addComponent(jLabel5)
                     .addComponent(txtDuracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblGenero)
+                    .addComponent(jLabel6)
                     .addComponent(txtGenero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreArtista)
-                    .addComponent(txtNombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7)
+                    .addComponent(txtArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnCrearCancion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_txtBitacora, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane_taResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearArtistaActionPerformed
-        // Variables locales solo con los datos del artista
-        String nombre = txtNombre.getText().trim();
-        String pais = txtPais.getText().trim();
-        int oyentes;
-        try {
-            oyentes = Integer.parseInt(txtOyentes.getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Los oyentes mensuales deben ser un numero entero.");
-            return;
-        }
+        String nombre = txtNombre.getText();
+        String pais = txtPais.getText();
+        int oyentes = Integer.parseInt(txtOyentes.getText());
 
         Artista artista = new Artista();
         artista.nombre = nombre;
         artista.paisOrigen = pais;
         artista.oyentesMensuales = oyentes;
 
-        txtBitacora.append("=== ARTISTA CREADO ===\n");
-        txtBitacora.append("Nombre: " + artista.nombre + "\n");
-        txtBitacora.append("Pais de origen: " + artista.paisOrigen + "\n");
-        txtBitacora.append("Oyentes mensuales: " + artista.oyentesMensuales + "\n\n");
-
-        txtNombre.setText("");
-        txtPais.setText("");
-        txtOyentes.setText("");
+        taResultados.append("Artista: " + artista.nombre + " | Pais: " + artista.paisOrigen
+                + " | Oyentes: " + artista.oyentesMensuales + "\n");
     }//GEN-LAST:event_btnCrearArtistaActionPerformed
 
     private void btnCrearCancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCancionActionPerformed
-        // Variables locales solo con los datos de la cancion
-        String titulo = txtTitulo.getText().trim();
-        String genero = txtGenero.getText().trim();
-        String nombreArtista = txtNombreArtista.getText().trim();
-        int duracion;
-        try {
-            duracion = Integer.parseInt(txtDuracion.getText().trim());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "La duracion debe ser un numero entero de segundos.");
-            return;
-        }
+        String titulo = txtTitulo.getText();
+        int duracion = Integer.parseInt(txtDuracion.getText());
+        String genero = txtGenero.getText();
+        String nombreArtista = txtArtista.getText();
 
         Cancion cancion = new Cancion();
         cancion.titulo = titulo;
@@ -225,50 +186,63 @@ public class FrmStreaming extends javax.swing.JFrame {
         cancion.genero = genero;
         cancion.nombreArtista = nombreArtista;
 
-        txtBitacora.append("=== CANCION CREADA ===\n");
-        txtBitacora.append("Titulo: " + cancion.titulo + "\n");
-        txtBitacora.append("Duracion: " + cancion.duracionSegundos + " segundos\n");
-        txtBitacora.append("Genero: " + cancion.genero + "\n");
-        txtBitacora.append("Artista: " + cancion.nombreArtista + "\n\n");
-
-        txtTitulo.setText("");
-        txtDuracion.setText("");
-        txtGenero.setText("");
-        txtNombreArtista.setText("");
+        taResultados.append("Cancion: " + cancion.titulo + " | Duracion: " + cancion.duracionSegundos
+                + " seg | Genero: " + cancion.genero + " | Artista: " + cancion.nombreArtista + "\n");
     }//GEN-LAST:event_btnCrearCancionActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Streaming.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Streaming.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Streaming.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Streaming.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmStreaming().setVisible(true);
+                new Streaming().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblArtista;
-    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtNombre;
-    private javax.swing.JLabel lblPais;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JTextField txtPais;
-    private javax.swing.JLabel lblOyentes;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField txtOyentes;
     private javax.swing.JButton btnCrearArtista;
-    private javax.swing.JLabel lblCancion;
-    private javax.swing.JLabel lblTituloCancion;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JTextField txtTitulo;
-    private javax.swing.JLabel lblDuracion;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField txtDuracion;
-    private javax.swing.JLabel lblGenero;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField txtGenero;
-    private javax.swing.JLabel lblNombreArtista;
-    private javax.swing.JTextField txtNombreArtista;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField txtArtista;
     private javax.swing.JButton btnCrearCancion;
-    private javax.swing.JScrollPane jScrollPane_txtBitacora;
-    private javax.swing.JTextArea txtBitacora;
+    private javax.swing.JScrollPane jScrollPane_taResultados;
+    private javax.swing.JTextArea taResultados;
     // End of variables declaration//GEN-END:variables
 }

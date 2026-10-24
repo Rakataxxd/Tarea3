@@ -1,24 +1,26 @@
-package com.tarea3.asistencia;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.asistencia;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
- * Registro de Asistencia a Conferencia
+ *
+ * @author usuario
  */
-public class FrmAsistencia extends javax.swing.JFrame {
+public class Asistencia extends javax.swing.JFrame {
 
-    // Arreglo de 5 asistentes y su indice
     String[] asistentes = new String[5];
     int indice = 0;
-    String ruta = "temp/ricardogonzalez_asistencia.txt";
 
     /**
-     * Creates new form FrmAsistencia
+     * Creates new form Asistencia
      */
-    public FrmAsistencia() {
+    public Asistencia() {
         initComponents();
 
     }
@@ -32,21 +34,17 @@ public class FrmAsistencia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        lblNombre = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtNombre = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         btnExportar = new javax.swing.JButton();
-        jScrollPane_txtLista = new javax.swing.JScrollPane();
-        txtLista = new javax.swing.JTextArea();
+        jScrollPane_taLista = new javax.swing.JScrollPane();
+        taLista = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registro de Asistencia a Conferencia");
 
-        lblTitulo.setText("Registro de Asistencia a Conferencia");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-
-        lblNombre.setText("Nombre del asistente:");
+        jLabel1.setText("Nombre del asistente:");
 
         btnRegistrar.setText("Registrar Asistente");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -62,10 +60,10 @@ public class FrmAsistencia extends javax.swing.JFrame {
             }
         });
 
-        txtLista.setEditable(false);
-        txtLista.setColumns(20);
-        txtLista.setRows(5);
-        jScrollPane_txtLista.setViewportView(txtLista);
+        taLista.setEditable(false);
+        taLista.setColumns(20);
+        taLista.setRows(5);
+        jScrollPane_taLista.setViewportView(taLista);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -74,73 +72,56 @@ public class FrmAsistencia extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblNombre)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRegistrar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnExportar))
-                    .addComponent(jScrollPane_txtLista, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_taLista, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombre)
+                    .addComponent(jLabel1)
                     .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRegistrar)
                     .addComponent(btnExportar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_txtLista, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane_taLista, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        String nombre = txtNombre.getText().trim();
-        if (nombre.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Ingrese el nombre del asistente.");
-            return;
+        if (indice < 5) {
+            asistentes[indice] = txtNombre.getText();
+            taLista.append((indice + 1) + ". " + asistentes[indice] + "\n");
+            indice++;
+            txtNombre.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ya registro a los 5 asistentes");
         }
-        if (indice >= asistentes.length) {
-            JOptionPane.showMessageDialog(this, "Ya se registraron los 5 asistentes. Exporte la lista.");
-            return;
-        }
-        asistentes[indice] = nombre;
-        indice++;
-        txtLista.append(indice + ". " + nombre + "\n");
-        txtNombre.setText("");
-        txtNombre.requestFocus();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
-        if (indice < asistentes.length) {
-            JOptionPane.showMessageDialog(this, "Faltan asistentes por registrar (" + indice + " de " + asistentes.length + ").");
-            return;
-        }
-        try {
-            new File("temp").mkdirs();
-            FileWriter fw = new FileWriter(ruta, false);
+        try (FileWriter fw = new FileWriter("temp/ricardogonzalez_asistencia.txt")) {
             fw.write("Lista de Asistencia\n");
             for (int i = 0; i < asistentes.length; i++) {
                 fw.write((i + 1) + ". " + asistentes[i] + "\n");
             }
-            fw.close();
-            JOptionPane.showMessageDialog(this, "Lista exportada en " + ruta);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al escribir el archivo: " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Archivo Creado");
+        } catch (IOException ex) {
+            System.out.println("No se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnExportarActionPerformed
 
@@ -148,20 +129,43 @@ public class FrmAsistencia extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Asistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Asistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Asistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Asistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmAsistencia().setVisible(true);
+                new Asistencia().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnExportar;
-    private javax.swing.JScrollPane jScrollPane_txtLista;
-    private javax.swing.JTextArea txtLista;
+    private javax.swing.JScrollPane jScrollPane_taLista;
+    private javax.swing.JTextArea taLista;
     // End of variables declaration//GEN-END:variables
 }

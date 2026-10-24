@@ -1,4 +1,8 @@
-package com.tarea3.temperaturas;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.temperaturas;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,19 +10,19 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 /**
- * Lector y Analizador de Temperaturas
+ *
+ * @author usuario
  */
-public class FrmTemperaturas extends javax.swing.JFrame {
+public class Temperaturas extends javax.swing.JFrame {
 
-    // Arreglo de 6 temperaturas, su indice y la ruta del archivo
     double[] temperaturas = new double[6];
     int indice = 0;
     String ruta = "temp/temperaturas.txt";
 
     /**
-     * Creates new form FrmTemperaturas
+     * Creates new form Temperaturas
      */
-    public FrmTemperaturas() {
+    public Temperaturas() {
         initComponents();
 
     }
@@ -32,17 +36,13 @@ public class FrmTemperaturas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
         btnCargarDatos = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
-        jScrollPane_txtResultados = new javax.swing.JScrollPane();
-        txtResultados = new javax.swing.JTextArea();
+        jScrollPane_taResultados = new javax.swing.JScrollPane();
+        taResultados = new javax.swing.JTextArea();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lector y Analizador de Temperaturas");
-
-        lblTitulo.setText("Lector y Analizador de Temperaturas");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
 
         btnCargarDatos.setText("Cargar Datos");
         btnCargarDatos.addActionListener(new java.awt.event.ActionListener() {
@@ -58,10 +58,10 @@ public class FrmTemperaturas extends javax.swing.JFrame {
             }
         });
 
-        txtResultados.setEditable(false);
-        txtResultados.setColumns(20);
-        txtResultados.setRows(5);
-        jScrollPane_txtResultados.setViewportView(txtResultados);
+        taResultados.setEditable(false);
+        taResultados.setColumns(20);
+        taResultados.setRows(5);
+        jScrollPane_taResultados.setViewportView(taResultados);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,94 +70,103 @@ public class FrmTemperaturas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCargarDatos)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnCalcular))
-                    .addComponent(jScrollPane_txtResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane_taResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCargarDatos)
                     .addComponent(btnCalcular))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane_txtResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane_taResultados, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCargarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCargarDatosActionPerformed
         try {
-            File archivo = new File(ruta);
-            Scanner sc = new Scanner(archivo);
+            Scanner sc = new Scanner(new File(ruta));
             indice = 0;
-            while (sc.hasNextLine() && indice < temperaturas.length) {
-                String linea = sc.nextLine().trim();
-                if (!linea.isEmpty()) {
-                    temperaturas[indice] = Double.parseDouble(linea);
-                    indice++;
-                }
+            while (sc.hasNextLine()) {
+                temperaturas[indice] = Double.parseDouble(sc.nextLine());
+                indice++;
             }
             sc.close();
-            JOptionPane.showMessageDialog(this, "Datos cargados en memoria: " + indice + " registros.");
-        } catch (FileNotFoundException e) {
-            JOptionPane.showMessageDialog(this, "No se encontro el archivo " + ruta);
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "El archivo contiene un valor no numerico.");
+            JOptionPane.showMessageDialog(this, "Datos cargados en memoria");
+        } catch (FileNotFoundException ex) {
+            System.out.println("Ocurrio un error al leer");
         }
     }//GEN-LAST:event_btnCargarDatosActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if (indice == 0) {
-            JOptionPane.showMessageDialog(this, "Primero presione \"Cargar Datos\".");
-            return;
-        }
         double suma = 0;
         int calidos = 0;
         int frescos = 0;
-        for (int i = 0; i < indice; i++) {
-            suma += temperaturas[i];
+        for (int i = 0; i < temperaturas.length; i++) {
+            suma = suma + temperaturas[i];
             if (temperaturas[i] >= 25.0) {
                 calidos++;
             } else {
                 frescos++;
             }
         }
-        double promedio = suma / indice;
-        txtResultados.setText("");
-        txtResultados.append("An\u00e1lisis Clim\u00e1tico\n");
-        txtResultados.append("------------------\n");
-        txtResultados.append("Promedio de Temperatura: " + promedio + "\n");
-        txtResultados.append("D\u00edas C\u00e1lidos (>= 25\u00b0): " + calidos + "\n");
-        txtResultados.append("D\u00edas Frescos (< 25\u00b0): " + frescos + "\n");
+        double promedio = suma / temperaturas.length;
+        taResultados.setText("");
+        taResultados.append("An\u00e1lisis Clim\u00e1tico\n");
+        taResultados.append("------------------\n");
+        taResultados.append("Promedio de Temperatura: " + promedio + "\n");
+        taResultados.append("D\u00edas C\u00e1lidos (>= 25\u00b0): " + calidos + "\n");
+        taResultados.append("D\u00edas Frescos (< 25\u00b0): " + frescos + "\n");
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Temperaturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Temperaturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Temperaturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Temperaturas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmTemperaturas().setVisible(true);
+                new Temperaturas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
     private javax.swing.JButton btnCargarDatos;
     private javax.swing.JButton btnCalcular;
-    private javax.swing.JScrollPane jScrollPane_txtResultados;
-    private javax.swing.JTextArea txtResultados;
+    private javax.swing.JScrollPane jScrollPane_taResultados;
+    private javax.swing.JTextArea taResultados;
     // End of variables declaration//GEN-END:variables
 }

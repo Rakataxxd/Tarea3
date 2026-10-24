@@ -1,24 +1,26 @@
-package com.tarea3.ventas;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package umg.tarea3.ventas;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
- * Control de Ventas Semanales
+ *
+ * @author usuario
  */
-public class FrmVentas extends javax.swing.JFrame {
+public class Ventas extends javax.swing.JFrame {
 
-    // Arreglo de 5 ventas (lunes a viernes) y su indice
     double[] ventas = new double[5];
     int indice = 0;
-    String ruta = "temp/ricardogonzalez_reporte_ventas.txt";
 
     /**
-     * Creates new form FrmVentas
+     * Creates new form Ventas
      */
-    public FrmVentas() {
+    public Ventas() {
         initComponents();
 
     }
@@ -32,20 +34,15 @@ public class FrmVentas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitulo = new javax.swing.JLabel();
-        lblMonto = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
         btnAgregarVenta = new javax.swing.JButton();
         btnGenerarReporte = new javax.swing.JButton();
-        lblEstado = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Control de Ventas Semanales");
 
-        lblTitulo.setText("Control de Ventas Semanales");
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
-
-        lblMonto.setText("Monto de la venta (Q):");
+        jLabel1.setText("Monto de la venta:");
 
         btnAgregarVenta.setText("Agregar Venta");
         btnAgregarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -61,8 +58,6 @@ public class FrmVentas extends javax.swing.JFrame {
             }
         });
 
-        lblEstado.setText("Ventas ingresadas: 0 de 5");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -70,82 +65,59 @@ public class FrmVentas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblMonto)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnAgregarVenta)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnGenerarReporte))
-                    .addComponent(lblEstado))
+                        .addComponent(btnGenerarReporte)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMonto)
+                    .addComponent(jLabel1)
                     .addComponent(txtMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAgregarVenta)
                     .addComponent(btnGenerarReporte))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblEstado)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAgregarVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarVentaActionPerformed
-        if (indice >= ventas.length) {
-            JOptionPane.showMessageDialog(this, "Ya se ingresaron las 5 ventas. Genere el reporte.");
-            return;
-        }
-        try {
-            double monto = Double.parseDouble(txtMonto.getText().trim());
-            ventas[indice] = monto;
+        if (indice < 5) {
+            ventas[indice] = Double.parseDouble(txtMonto.getText());
             indice++;
-            lblEstado.setText("Ventas ingresadas: " + indice + " de " + ventas.length);
             txtMonto.setText("");
-            txtMonto.requestFocus();
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Ingrese un monto numerico valido.");
+        } else {
+            JOptionPane.showMessageDialog(this, "Ya ingreso las 5 ventas");
         }
     }//GEN-LAST:event_btnAgregarVentaActionPerformed
 
     private void btnGenerarReporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarReporteActionPerformed
-        if (indice < ventas.length) {
-            JOptionPane.showMessageDialog(this, "Faltan ventas por ingresar (" + indice + " de " + ventas.length + ").");
-            return;
-        }
         double total = 0;
-        int superanMeta = 0;
+        int mayores = 0;
         for (int i = 0; i < ventas.length; i++) {
-            total += ventas[i];
+            total = total + ventas[i];
             if (ventas[i] > 500) {
-                superanMeta++;
+                mayores++;
             }
         }
-        try {
-            new File("temp").mkdirs();
-            FileWriter fw = new FileWriter(ruta, false);
+        try (FileWriter fw = new FileWriter("temp/ricardogonzalez_reporte_ventas.txt")) {
             fw.write("Reporte de Ventas\n");
-            fw.write("Total Vendido: " + String.format("%.2f", total) + "\n");
-            fw.write("Ventas superiores a Q500: " + superanMeta + "\n");
-            fw.close();
-            JOptionPane.showMessageDialog(this, "Reporte generado en " + ruta
-                    + "\nTotal Vendido: " + String.format("%.2f", total)
-                    + "\nVentas superiores a Q500: " + superanMeta);
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error al escribir el archivo: " + e.getMessage());
+            fw.write("Total Vendido: " + total + "\n");
+            fw.write("Ventas superiores a Q500: " + mayores + "\n");
+            JOptionPane.showMessageDialog(this, "Archivo Creado");
+        } catch (IOException ex) {
+            System.out.println("No se pudo escribir el archivo");
         }
     }//GEN-LAST:event_btnGenerarReporteActionPerformed
 
@@ -153,19 +125,41 @@ public class FrmVentas extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Ventas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Ventas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Ventas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Ventas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FrmVentas().setVisible(true);
+                new Ventas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblMonto;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField txtMonto;
     private javax.swing.JButton btnAgregarVenta;
     private javax.swing.JButton btnGenerarReporte;
-    private javax.swing.JLabel lblEstado;
     // End of variables declaration//GEN-END:variables
 }
