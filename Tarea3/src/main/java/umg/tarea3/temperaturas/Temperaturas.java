@@ -51,7 +51,7 @@ public class Temperaturas extends javax.swing.JFrame {
             }
         });
 
-        btnCalcular.setText("Calcular Estad\u00edsticas");
+        btnCalcular.setText("Calcular Estadísticas");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCalcularActionPerformed(evt);
@@ -121,11 +121,11 @@ public class Temperaturas extends javax.swing.JFrame {
         }
         double promedio = suma / temperaturas.length;
         taResultados.setText("");
-        taResultados.append("An\u00e1lisis Clim\u00e1tico\n");
+        taResultados.append("Análisis Climático\n");
         taResultados.append("------------------\n");
         taResultados.append("Promedio de Temperatura: " + promedio + "\n");
-        taResultados.append("D\u00edas C\u00e1lidos (>= 25\u00b0): " + calidos + "\n");
-        taResultados.append("D\u00edas Frescos (< 25\u00b0): " + frescos + "\n");
+        taResultados.append("Días Cálidos (>= 25°): " + calidos + "\n");
+        taResultados.append("Días Frescos (< 25°): " + frescos + "\n");
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     /**

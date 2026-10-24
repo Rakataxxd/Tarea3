@@ -46,13 +46,13 @@ public class Videojuegos extends javax.swing.JFrame {
         taCatalogo = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cat\u00e1logo de Videojuegos");
+        setTitle("Catálogo de Videojuegos");
 
-        jLabel1.setText("T\u00edtulo del Juego:");
+        jLabel1.setText("Título del Juego:");
 
         jLabel2.setText("Consola:");
 
-        jLabel3.setText("A\u00f1o de Lanzamiento:");
+        jLabel3.setText("Año de Lanzamiento:");
 
         btnAgregar.setText("Agregar Juego");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
@@ -61,14 +61,14 @@ public class Videojuegos extends javax.swing.JFrame {
             }
         });
 
-        btnMostrar.setText("Mostrar Cat\u00e1logo");
+        btnMostrar.setText("Mostrar Catálogo");
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
             }
         });
 
-        btnEliminar.setText("Eliminar \u00daltimo");
+        btnEliminar.setText("Eliminar Último");
         btnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarActionPerformed(evt);

@@ -65,7 +65,7 @@ public class Discos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Biblioteca de Discos Musicales");
 
-        jLabel1.setText("Buscar \u00c1lbum:");
+        jLabel1.setText("Buscar Álbum:");
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -74,11 +74,11 @@ public class Discos extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("A\u00f1o actual:");
+        jLabel2.setText("Año actual:");
 
         lblAnio.setText("-");
 
-        jLabel3.setText("Nuevo A\u00f1o:");
+        jLabel3.setText("Nuevo Año:");
 
         btnActualizar.setText("Actualizar Registro");
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {

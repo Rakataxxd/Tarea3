@@ -57,7 +57,7 @@ public class Streaming extends javax.swing.JFrame {
 
         jLabel2.setText("Nombre:");
 
-        jLabel3.setText("Pa\u00eds de Origen:");
+        jLabel3.setText("País de Origen:");
 
         jLabel4.setText("Oyentes Mensuales:");
 
@@ -68,17 +68,17 @@ public class Streaming extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("--- Datos de la Canci\u00f3n ---");
+        jLabel5.setText("--- Datos de la Canción ---");
 
-        jLabel6.setText("T\u00edtulo:");
+        jLabel6.setText("Título:");
 
-        jLabel7.setText("Int\u00e9rprete (Artista):");
+        jLabel7.setText("Intérprete (Artista):");
 
-        jLabel8.setText("Duraci\u00f3n (segundos):");
+        jLabel8.setText("Duración (segundos):");
 
-        jLabel9.setText("G\u00e9nero:");
+        jLabel9.setText("Género:");
 
-        btnCrearCancion.setText("Crear Canci\u00f3n");
+        btnCrearCancion.setText("Crear Canción");
         btnCrearCancion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCrearCancionActionPerformed(evt);
